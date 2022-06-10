@@ -6,10 +6,10 @@ nav{
     top: 0;
     left: 0;
     right: 0;
-    height: 55px;
+    height: 40px;
     align-items: center;
-    justify-content: space-between;
     background-color:#D9D9D9;
+    flex-shrink: 1;
 }
 
 #option-container{
@@ -30,33 +30,68 @@ nav{
 }
 
 #title{
-    font-size: 25px;
+    font-size: 1.4rem;
     font-weight:500 ;
 }
 
 .option{
-    font-size: 20px;
     cursor: pointer;
-    font-weight: 400;
-    justify-content: center;
     height: 100%;
+   
+}
+
+.option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.texto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 400;
     transition: background-color 0.25s, 
     color 0.25s ;
+    height: 100%;
+    width: 100%;
 }
 
-@media (max-width:635px){
-    .option{
-        font-size: 13px;
+.icon{
+    position: absolute;
+    width: 25px;
+    visibility: hidden;
+
+}
+
+@media (max-width:600px){
+    
+    nav{
+        grid-template-columns: 1fr;
     }
-
+    #title{
+        display: none;
+    }
+    
+}
+@media (max-width:445px){
+    .texto{
+        display: none;
+    }
+    .icon{
+        visibility: visible;
+    }
 }
 
-.option:hover{
+.texto:hover{
     background-color: #646464;
     color: white;
 }
 
-.option:active{
+.texto:active{
     opacity: 0.80;
 }
 
