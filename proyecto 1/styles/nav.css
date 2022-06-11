@@ -91,7 +91,7 @@ nav{
     color: white;
 }
 
-.texto:active{
+.option:active{
     opacity: 0.80;
 }
 
