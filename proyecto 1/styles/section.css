@@ -1,64 +1,129 @@
-section{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+section {
+    display: flex;
+    flex-direction: column;
     margin-top: 50px;
     align-items: center;
     justify-content: center;
     row-gap: 25px;
 }
-article{
+
+article {
     display: flex;
     flex-direction: column;
     width: 80vw;
 }
 
-#perfil{
+#perfil {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.titulo{
+.titulo {
     font-size: 1.5rem;
     font-weight: 500;
     display: flex;
     justify-content: center;
 }
 
-.subtitulo{
-    font-size: 1.37rem ;
+.subtitulo {
+    font-size: 1.37rem;
     font-weight: 500;
     margin-top: 25;
     margin-bottom: 15px;
 }
 
-#metas{
+#lista {
     font-size: 1.25rem;
     font-weight: 300;
     margin: 0px;
     font-family: "Roboto", sans-serif;
 }
 
-.contenido{
+.contenido {
     font-size: 1.25rem;
     font-weight: 300;
     margin: 0px;
 }
 
-#img-container{
+#img-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    position: static;
 }
 
-#yo-img{
+#yo-img {
     width: 165px;
     border-radius: 100px;
     box-shadow: 10px 10px 10px rgb(184, 184, 184)
 }
 
-.descrip-container{
+.descrip-div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.dato-tabla,
+.dato2-tabla {
+    font-size: 1.12rem;
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+}
+
+.dato-tabla {
+    font-weight: 500;
+}
+
+.dato2-tabla {
+    font-weight: 400;
+}
+
+table.tabla-datos {
+    background-color: #F4F4F4;
+}
+
+#cabecera-info div {
+    display: flex;
+    justify-content: center;
+}
+
+.contacto {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-top: 0px;
+}
+
+.contacto span {
+    font-weight: 400;
+}
+
+.icon2 {
+    width: 30px;
+    padding-left: 5px;
+}
+
+.icon-location {
+    width: 22px;
+}
+
+#plantel {
+    font-weight: 500;
+}
+
+#anio-plantel {
+    font-weight: 400;
+}
+
+#texto-plantel{
+    font-weight: 300;
+}
+
+.plantel-div{
+    margin-bottom: 12px;
+    margin-top: 25px;
+}
+
+.plantel-div p{
+    margin-bottom: 4px;
 }
 
