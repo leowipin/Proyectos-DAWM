@@ -72,10 +72,18 @@
                 <p>Mi ocupación</p>
                 <h2>Metas</h2>
                 <ul>
-                    <li> <p>meta 1</p></li>
-                    <li> <p>meta 2</p></li>
-                    <li> <p>meta 3</p></li>
-                    <li> <p>meta 4</p></li>
+                    <li>
+                        <p>meta 1</p>
+                    </li>
+                    <li>
+                        <p>meta 2</p>
+                    </li>
+                    <li>
+                        <p>meta 3</p>
+                    </li>
+                    <li>
+                        <p>meta 4</p>
+                    </li>
                 </ul>
                 <h2>Mensaje</h2>
                 <audio controls>
@@ -131,8 +139,9 @@
                 <h2>Redes sociales</h2>
                 <p> <span id="type-span">facebook: </span> <a class="hipervinculos" href="https://www.facebook.com/"
                         target="_blank">@lewipinja</a> <img class="icon2" src="icons/facebook-icon.svg" alt=""></p>
-                <p> <span id="type-span">twitter: </span> <a class="hipervinculos" href="https://twitter.com/LeonardoPinca11"
-                        target="_blank">@leonardopincay</a> <img class="icon2" src="icons/twitter-icon.svg" alt=""> </p>
+                <p> <span id="type-span">twitter: </span> <a class="hipervinculos"
+                        href="https://twitter.com/LeonardoPinca11" target="_blank">@leonardopincay</a> <img
+                        class="icon2" src="icons/twitter-icon.svg" alt=""> </p>
                 <p> <span id="type-span">GitHub: </span><a class="hipervinculos" href="https://github.com/leowipin"
                         target="_blank">@leowipin</a> <img class="icon2" src="icons/github-icon.svg" alt=""></p>
             </div>
@@ -179,10 +188,18 @@
             <div id="idiomas">
                 <h2>Idiomas</h2>
                 <ul>
-                    <li><p>Español</p></li>
-                    <li><p>Inglés</p></li>
-                    <li><p>Alemán</p></li>
-                    <li><p>Quichua</p></li>
+                    <li>
+                        <p>Español</p>
+                    </li>
+                    <li>
+                        <p>Inglés</p>
+                    </li>
+                    <li>
+                        <p>Alemán</p>
+                    </li>
+                    <li>
+                        <p>Quichua</p>
+                    </li>
                 </ul>
             </div>
         </article>
@@ -256,7 +273,70 @@
                         et, facilisis rhoncus dui. Class aptent taciti</p>
                 </div>
             </div>
-            <p class="titulo"></p>
+            <h2>¿Estas interesado en algún proyecto?</h2>
+            <p id="send">Contáctame</p>
+            <form>
+                <div class="campo">
+                    <label for="nombre">
+                        <p class="send-data">Nombre:</p>
+                    </label>
+                    <input type="text" name="nombre-usuario" class="box-form" id="nombre"
+                        placeholder="Ingresa tu nombre">
+                </div>
+                <div class="campo">
+                    <label for="email">
+                        <p class="send-data">E-mail</p>
+                    </label>
+                    <input type="email" name="email-usuario" class="box-form" id="email"
+                        placeholder="juan@example.com" required>
+                </div>
+                <div class="campo">
+                    <label for="fecha">
+                        <p class="send-data">Fecha de nacimiento:</p>
+                    </label>
+                    <input type="date" name="fecha-usuario" class="box-form" id="fecha">
+                </div>
+                <div class="campo">
+                    <label for="educacion">
+                        <p class="send-data">Educación:</p>
+                    </label>
+                    <select name="educacion-usuario" id="educacion" class="box-form">
+                        <option value="prim">primaria</option>
+                        <option value="prim">secundaria</option>
+                        <option value="prim">tercer nivel</option>
+                        <option value="prim">cuarto nivel</option>
+                    </select>
+                </div>
+                <div class="campo" id="campo-sex" >
+                    <label>
+                        <p class="send-data">Sexo:</p>
+                    </label>
+                    <div class="sexo-div">
+                        <label for="masculino">
+                            <p>Masculino</p>
+                        </label>
+                        <div><input type="radio" name="sexo-usuario" value="Masculino" id="masculino"></div>
+                    </div>
+                    <div class="sexo-div">
+                        <label for="femenino">
+                            <p>Femenino</p>
+                        </label>
+                        <input type="radio" name="sexo-usuario" value="Femenino" id="femenino">
+                    </div>
+
+
+                </div>
+                <div class="campo-mot">
+                    <label for="mot">
+                        <p class="send-data">Motivación:</p>
+                    </label>
+                    <textarea id="mot" class="box-form" name="mot-usuario" rows="8" cols="50"
+                        placeholder="Escribe tu motivación"></textarea>
+                </div>
+                <button class="send-button">
+                    <p>Enviar</p>
+                </button>
+            </form>
         </article>
 
     </section>
