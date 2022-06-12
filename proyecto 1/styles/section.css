@@ -13,16 +13,6 @@ article {
     width: 90vw;
 }
 
-#perfil {
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-
-.contenido {
-    font-size: 1.25rem;
-    font-weight: 300;
-    margin: 0px;
-}
 
 .hipervinculos:hover{
     text-decoration: underline;
@@ -71,7 +61,7 @@ table.tabla-datos {
     justify-content: center;
 }
 
-.contenido #type-span {
+p #type-span {
     font-weight: 400;
 }
 
@@ -126,7 +116,7 @@ table.tabla-datos {
     article{
         width: 90vw;
     }
-    .contenido{
+    p{
         font-size: 1.15rem;
     }
     h1{
