@@ -10,24 +10,22 @@ section {
 article {
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    width: 90vw;
 }
 
 #perfil {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-#lista {
-    font-size: 1.25rem;
-    font-weight: 300;
-    margin: 0px;
-    font-family: "Roboto", sans-serif;
-}
 
 .contenido {
     font-size: 1.25rem;
     font-weight: 300;
     margin: 0px;
+}
+
+.hipervinculos:hover{
+    text-decoration: underline;
 }
 
 #img-container {
@@ -73,18 +71,13 @@ table.tabla-datos {
     justify-content: center;
 }
 
-.contacto {
-    font-size: 1.25rem;
-    font-weight: 300;
-    margin-top: 0px;
-}
-
-.contacto span {
+.contenido #type-span {
     font-weight: 400;
 }
 
 .icon2 {
     width: 30px;
+    height: 30px;
     padding-left: 5px;
 }
 
@@ -124,11 +117,27 @@ table.tabla-datos {
 
 @media(max-width:600px){
     .embed-map{
-        width: 80vw;
+        width: 90vw;
         height: 262px;
     }
     .plantel-div{
         align-items: center;
+    }
+    article{
+        width: 90vw;
+    }
+    .contenido{
+        font-size: 1.15rem;
+    }
+    h1{
+        font-size: 1.36rem;
+    }
+    h2{
+        font-size: 1.24rem;
+    }
+    .dato-tabla, 
+    .dato2-tabla{
+        font-size: 1.01rem;
     }
 }
 
@@ -183,7 +192,7 @@ table.tabla-datos {
 }
 @media(max-width:695px){
     .video-play{
-        width: 80vw;
+        width: 90vw;
     }
     .video-div{
         flex-direction: column;
