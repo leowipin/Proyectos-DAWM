@@ -5,10 +5,11 @@ cargarDatos = () => {
         .then(response => response.json())
         .then(data => {
             let pokemons = data.pokemons
-            let pokemonsPorTipo = new Map()
+            let pokemonsPorTipo = new Map() //mapa que contiene a los pokemons dividido por tipo
             let claves = Object.keys(pokemons)
             let typeSet = new Set() //set para validar que tipos no han sido añadidos al select
-            for (let i = 0; i < claves.length; i++) {
+            let totalPok = claves.length
+            for (let i = 0; i < totalPok; i++) {
                 let clave = claves[i]
                 let pokemon = pokemons[clave]
                 let tipos = pokemon.types
@@ -19,71 +20,83 @@ cargarDatos = () => {
                         let plantillaOption = `<option value = "${nombreTipo}">${nombreTipo}</option>`
                         let etiquetaSelect = document.querySelector('select')
                         etiquetaSelect.innerHTML += plantillaOption
-                        pokemonsPorTipo.set(nombreTipo,[pokemon])
-                    } else{
+                        pokemonsPorTipo.set(nombreTipo, [pokemon])
+                    } else {
                         pokemonsPorTipo.get(nombreTipo).push(pokemon)
                     }
-                    
-                }
-            }
-            let etiquetaSelect = document.querySelector('select')
-            etiquetaSelect.addEventListener('change', (event) => {
-                let grafico1 = document.getElementById('grafico-1')
-                grafico1.innerHTML = ""
-                if(etiquetaSelect.value!=-1){
-                let tipo = pokemonsPorTipo.get(etiquetaSelect.value)
-                //promedio de estadisticas del tipo de pokemon
-                let base_exp = 0
-                let height = 0
-                let hp = 0
-                let attack = 0
-                let defense = 0
-                let special_att = 0
-                let special_def = 0
-                let speed = 0
-               // let weight = 0
-                let i3
-                for(i3 = 0; i3<tipo.length; i3++){
-                    base_exp = base_exp + tipo[i3].base_experience
-                    height = height +tipo[i3].height
-                    let i4
-                    let stats = tipo[i3].stats
-                    for(i4 = 0; i4<stats.length; i4++){
-                        if(i4===0){
-                            hp = hp + stats[i4].base_stat
-                        }
-                        if(i4===1){
-                            attack = attack + stats[i4].base_stat
-                        }
-                        if(i4===2){
-                            defense = defense + stats[i4].base_stat
-                        }
-                        if(i4===3){
-                            special_att = special_att + stats[i4].base_stat
-                        }
-                        if(i4===4){
-                            special_def = special_def + stats[i4].base_stat
-                        }
-                        if(i4===5){
-                            speed = speed + stats[i4].base_stat
-                        }
-                    }
-                    //weight = weight + tipo[i3].weight
 
                 }
-                let prom_base_exp = Math.round(base_exp/(i3))
-                let prom_height = Math.round(height/(i3))
-                let prom_hp = Math.round(hp/(i3))
-                let prom_attack = Math.round(attack/(i3))
-                let prom_defense = Math.round(defense/(i3))
-                let prom_special_att = Math.round(special_att/(i3))
-                let prom_special_def = Math.round(special_def/(i3))
-                let prom_speed = Math.round(speed/(i3))
-                //let prom_weight = Math.round(weight/(i3))
-                
-                let max = Math.max(prom_base_exp, prom_height, prom_hp, prom_attack, prom_defense, prom_special_att, prom_special_def, prom_speed)
-                
-                let plantilla = `<tbody>
+            }
+            //grafico 1
+            let clavesTipo = pokemonsPorTipo.keys()
+            let c
+            for (let t of pokemonsPorTipo.keys()) {
+                let plantillaGrafico1 = `<tr>
+                <th scope="row">${t}</th>
+                <td style="--size: calc( ${pokemonsPorTipo.get(t).length} / ${totalPok} )"> <span class="data"> ${(pokemonsPorTipo.get(t).length)*100/totalPok}% </span> </td>
+              </tr>`
+                let grafico1 = document.getElementById('grafico-1')
+                grafico1.innerHTML += plantillaGrafico1
+            }
+
+            let etiquetaSelect = document.querySelector('select')
+            etiquetaSelect.addEventListener('change', (event) => {
+                let grafico2 = document.getElementById('grafico-2')
+                grafico2.innerHTML = ""
+                if (etiquetaSelect.value != -1) {
+                    let tipo = pokemonsPorTipo.get(etiquetaSelect.value)
+                    //promedio de estadisticas del tipo de pokemon
+                    let base_exp = 0
+                    let height = 0
+                    let hp = 0
+                    let attack = 0
+                    let defense = 0
+                    let special_att = 0
+                    let special_def = 0
+                    let speed = 0
+                    // let weight = 0
+                    let i3
+                    for (i3 = 0; i3 < tipo.length; i3++) {
+                        base_exp = base_exp + tipo[i3].base_experience
+                        height = height + tipo[i3].height
+                        let i4
+                        let stats = tipo[i3].stats
+                        for (i4 = 0; i4 < stats.length; i4++) {
+                            if (i4 === 0) {
+                                hp = hp + stats[i4].base_stat
+                            }
+                            if (i4 === 1) {
+                                attack = attack + stats[i4].base_stat
+                            }
+                            if (i4 === 2) {
+                                defense = defense + stats[i4].base_stat
+                            }
+                            if (i4 === 3) {
+                                special_att = special_att + stats[i4].base_stat
+                            }
+                            if (i4 === 4) {
+                                special_def = special_def + stats[i4].base_stat
+                            }
+                            if (i4 === 5) {
+                                speed = speed + stats[i4].base_stat
+                            }
+                        }
+                        //weight = weight + tipo[i3].weight
+
+                    }
+                    let prom_base_exp = Math.round(base_exp / (i3))
+                    let prom_height = Math.round(height / (i3))
+                    let prom_hp = Math.round(hp / (i3))
+                    let prom_attack = Math.round(attack / (i3))
+                    let prom_defense = Math.round(defense / (i3))
+                    let prom_special_att = Math.round(special_att / (i3))
+                    let prom_special_def = Math.round(special_def / (i3))
+                    let prom_speed = Math.round(speed / (i3))
+                    //let prom_weight = Math.round(weight/(i3))
+
+                    let max = Math.max(prom_base_exp, prom_height, prom_hp, prom_attack, prom_defense, prom_special_att, prom_special_def, prom_speed)
+
+                    let plantilla = `<tbody>
                 <tr>
                   <th scope="row">Exp</th>
                   <td style="--size: calc( ${prom_base_exp} / ${max} )"> <span class="data"> ${prom_base_exp} </span> </td>
@@ -117,9 +130,9 @@ cargarDatos = () => {
                   <td style="--size: calc( ${prom_speed} / ${max} )"> <span class="data"> ${prom_speed} </span> </td>
                 </tr>
               </tbody>`
-                
-              grafico1.innerHTML = plantilla
-            } 
+
+                    grafico2.innerHTML = plantilla
+                }
             })
 
         })
