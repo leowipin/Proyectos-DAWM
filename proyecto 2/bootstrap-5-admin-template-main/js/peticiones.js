@@ -47,29 +47,76 @@ cargarDatos = () => {
                     let tipo = pokemonsPorTipo.get(etiquetaSelect.value)
                     //promedio de estadisticas del tipo de pokemon
                     let base_exp = 0
+                    let max_base_exp = 0
+                    let namePok_baseMax = ""
+
                     let height = 0
+                    let max_height = 0
+                    let namePok_hMax = ""
+
                     let hp = 0
+                    let max_hp = 0
+                    let namePok_hpMax = ""
+
                     let attack = 0
+                    let max_attack = 0
+                    let namePok_attMax = ""
+
                     let defense = 0
+                    let max_defense = 0
+                    let namePok_defMax = ""
+
                     let special_att = 0
+
                     let special_def = 0
+
                     let speed = 0
+                    let max_speed = 0
+                    let namePok_speMax = ""
+
+                    let max_weight = 0
+                    let namePok_wMax = ""
                     // let weight = 0
                     let i3
                     for (i3 = 0; i3 < tipo.length; i3++) {
-                        base_exp = base_exp + tipo[i3].base_experience
+                        bexp = tipo[i3].base_experience
+                        base_exp = base_exp + bexp
+                        if(max_base_exp<bexp){
+                            max_base_exp = bexp
+                            namePok_baseMax = tipo[i3].name
+                        }
+                        bhei = tipo[i3].height
                         height = height + tipo[i3].height
+                        if(max_height<bhei){
+                            max_height = bhei
+                            namePok_hMax = tipo[i3].name
+                        }
                         let i4
                         let stats = tipo[i3].stats
                         for (i4 = 0; i4 < stats.length; i4++) {
                             if (i4 === 0) {
-                                hp = hp + stats[i4].base_stat
+                                bhp = stats[i4].base_stat
+                                hp = hp + bhp
+                                if(max_hp<bhp){
+                                    max_hp = bhp
+                                    namePok_hpMax = tipo[i3].name
+                                }
                             }
                             if (i4 === 1) {
-                                attack = attack + stats[i4].base_stat
+                                batt = stats[i4].base_stat
+                                attack = attack + batt
+                                if(max_attack<batt){
+                                    max_attack = batt
+                                    namePok_attMax = tipo[i3].name
+                                }
                             }
                             if (i4 === 2) {
-                                defense = defense + stats[i4].base_stat
+                                bdef = stats[i4].base_stat
+                                defense = defense + bdef
+                                if(max_defense<bdef){
+                                    max_defense = bdef
+                                    namePok_defMax = tipo[i3].name
+                                }
                             }
                             if (i4 === 3) {
                                 special_att = special_att + stats[i4].base_stat
@@ -78,12 +125,26 @@ cargarDatos = () => {
                                 special_def = special_def + stats[i4].base_stat
                             }
                             if (i4 === 5) {
-                                speed = speed + stats[i4].base_stat
+                                bs = stats[i4].base_stat
+                                speed = speed + bs
+                                if(max_speed<bs){
+                                    max_speed = bs
+                                    namePok_speMax = tipo[i3].name
+                                }
+
                             }
                         }
                         //weight = weight + tipo[i3].weight
 
                     }
+                    console.log(namePok_baseMax)
+                    console.log(namePok_hMax)
+                    console.log(namePok_hpMax)
+                    console.log(namePok_attMax)
+                    console.log(namePok_defMax)
+                    console.log(namePok_speMax)
+                    console.log(namePok_wMax)
+                    
                     let prom_base_exp = Math.round(base_exp / (i3))
                     let prom_height = Math.round(height / (i3))
                     let prom_hp = Math.round(hp / (i3))
