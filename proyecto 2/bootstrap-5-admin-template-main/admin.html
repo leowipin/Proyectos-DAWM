@@ -69,7 +69,7 @@
 
         <!-- Brand -->
         <a class="navbar-brand" href="#">
-          <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt="" loading="lazy" />
+          <img src="img/pokeapi.png" height="25" alt="" loading="lazy" />
         </a>
         <!-- Search form -->
         <form class="d-none d-md-flex input-group w-auto my-auto">
@@ -189,7 +189,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section class="mb-4">
         <div class="card">
           <div class="card-header py-3">
             <h5 class="mb-0 text-center"><strong>Estadísticas por tipo de pokemon</strong></h5>
@@ -217,56 +217,56 @@
               <div class="card-body">
                 <div class="d-flex justify-content-between px-md-1">
                   <div class="align-self-center">
-                    <h5>pokemon name</h5>
+                    <h6 id="exp-pok-name"></h6>
                   </div>
                   <div class="text-end">
-                    <h3>278</h3>
+                    <h4 class="text-warning" id="exp-num"></h4>
+                    <p class="mb-0">Mayor experiencia</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between px-md-1">
+                  <div class="align-self-center">
+                    <h6 id="hei-pok-name"></h6>
+                  </div>
+                  <div class="text-end">
+                    <h4 class="text-success" id="hei-num"></h4>
+                    <p class="mb-0">Mayor altura</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between px-md-1">
+                  <div class="align-self-center">
+                    <h6 id="hp-pok-name"></h6>
+                  </div>
+                  <div class="text-end">
+                    <h4 class="text-info" id="hp-num"></h4>
+                    <p class="mb-0">Mayor vida</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between px-md-1">
+                  <div class="align-self-center">
+                    <h6 id="att-pok-name"></h6>
+                  </div>
+                  <div class="text-end">
+                    <h4 class="text-danger" id="att-num"></h4>
                     <p class="mb-0">Mayor ataque</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between px-md-1">
-                  <div class="align-self-center">
-                    <i class="far fa-comment-alt text-warning fa-3x"></i>
-                  </div>
-                  <div class="text-end">
-                    <h3>156</h3>
-                    <p class="mb-0">New Comments</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between px-md-1">
-                  <div class="align-self-center">
-                    <i class="fas fa-chart-line text-success fa-3x"></i>
-                  </div>
-                  <div class="text-end">
-                    <h3>64.89 %</h3>
-                    <p class="mb-0">Bounce Rate</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between px-md-1">
-                  <div class="align-self-center">
-                    <i class="fas fa-map-marker-alt text-danger fa-3x"></i>
-                  </div>
-                  <div class="text-end">
-                    <h3>423</h3>
-                    <p class="mb-0">Total Visits</p>
                   </div>
                 </div>
               </div>
@@ -278,12 +278,12 @@
             <div class="card">
               <div class="card-body">
                 <div class="d-flex justify-content-between px-md-1">
-                  <div>
-                    <h3 class="text-danger">278</h3>
-                    <p class="mb-0">New Projects</p>
-                  </div>
                   <div class="align-self-center">
-                    <i class="fas fa-rocket text-danger fa-3x"></i>
+                    <h6 id="def-pok-name"></h6>
+                  </div>
+                  <div class="text-end">
+                    <h4 class="text-success" id="def-num"></h4>
+                    <p class="mb-0">Mayor defensa</p>
                   </div>
                 </div>
               </div>
@@ -293,32 +293,19 @@
             <div class="card">
               <div class="card-body">
                 <div class="d-flex justify-content-between px-md-1">
-                  <div>
-                    <h3 class="text-success">156</h3>
-                    <p class="mb-0">New Clients</p>
-                  </div>
                   <div class="align-self-center">
-                    <i class="far fa-user text-success fa-3x"></i>
+                    <h6 id="vel-pok-name"></h6>
+                  </div>
+                  <div class="text-end">
+                    <h4 class="text-info"  id="vel-num"></h4>
+                    <p class="mb-0">Mayor velocidad</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between px-md-1">
-                  <div>
-                    <h3 class="text-warning">64.89 %</h3>
-                    <p class="mb-0">Conversion Rate</p>
-                  </div>
-                  <div class="align-self-center">
-                    <i class="fas fa-chart-pie text-warning fa-3x"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
+          
           
         </div>
       </section>

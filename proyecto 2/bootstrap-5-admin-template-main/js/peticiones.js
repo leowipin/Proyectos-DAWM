@@ -6,13 +6,16 @@ cargarDatos = () => {
         .then(data => {
             let pokemons = data.pokemons
             let pokemonsPorTipo = new Map() //mapa que contiene a los pokemons dividido por tipo
+            pokemonsPorTipo.set('general', [])
             let claves = Object.keys(pokemons)
             let typeSet = new Set() //set para validar que tipos no han sido añadidos al select
             let totalPok = claves.length
+            document.querySelector('select').innerHTML += `<option value = "general">general</option>`
             for (let i = 0; i < totalPok; i++) {
                 let clave = claves[i]
                 let pokemon = pokemons[clave]
                 let tipos = pokemon.types
+                pokemonsPorTipo.get('general').push(pokemon)
                 for (let i2 = 0; i2 < tipos.length; i2++) {
                     let nombreTipo = tipos[i2].type.name
                     if (!typeSet.has(nombreTipo)) {
@@ -27,17 +30,22 @@ cargarDatos = () => {
 
                 }
             }
+
             //grafico 1
             let clavesTipo = pokemonsPorTipo.keys()
             let c
             for (let t of pokemonsPorTipo.keys()) {
-                let plantillaGrafico1 = `<tr>
+                if (t != 'general') {
+                    let plantillaGrafico1 = `<tr>
                 <th scope="row">${t}</th>
-                <td style="--size: calc( ${pokemonsPorTipo.get(t).length} / ${totalPok} )"> <span class="data"> ${(pokemonsPorTipo.get(t).length)*100/totalPok}% </span> </td>
+                <td style="--size: calc( ${pokemonsPorTipo.get(t).length} / ${totalPok} )"> <span class="data"> ${(pokemonsPorTipo.get(t).length) * 100 / totalPok}% </span> </td>
               </tr>`
-                let grafico1 = document.getElementById('grafico-1')
-                grafico1.innerHTML += plantillaGrafico1
+                    let grafico1 = document.getElementById('grafico-1')
+                    grafico1.innerHTML += plantillaGrafico1
+                }
             }
+
+
 
             let etiquetaSelect = document.querySelector('select')
             etiquetaSelect.addEventListener('change', (event) => {
@@ -81,13 +89,13 @@ cargarDatos = () => {
                     for (i3 = 0; i3 < tipo.length; i3++) {
                         bexp = tipo[i3].base_experience
                         base_exp = base_exp + bexp
-                        if(max_base_exp<bexp){
+                        if (max_base_exp < bexp) {
                             max_base_exp = bexp
                             namePok_baseMax = tipo[i3].name
                         }
                         bhei = tipo[i3].height
                         height = height + tipo[i3].height
-                        if(max_height<bhei){
+                        if (max_height < bhei) {
                             max_height = bhei
                             namePok_hMax = tipo[i3].name
                         }
@@ -97,7 +105,7 @@ cargarDatos = () => {
                             if (i4 === 0) {
                                 bhp = stats[i4].base_stat
                                 hp = hp + bhp
-                                if(max_hp<bhp){
+                                if (max_hp < bhp) {
                                     max_hp = bhp
                                     namePok_hpMax = tipo[i3].name
                                 }
@@ -105,7 +113,7 @@ cargarDatos = () => {
                             if (i4 === 1) {
                                 batt = stats[i4].base_stat
                                 attack = attack + batt
-                                if(max_attack<batt){
+                                if (max_attack < batt) {
                                     max_attack = batt
                                     namePok_attMax = tipo[i3].name
                                 }
@@ -113,7 +121,7 @@ cargarDatos = () => {
                             if (i4 === 2) {
                                 bdef = stats[i4].base_stat
                                 defense = defense + bdef
-                                if(max_defense<bdef){
+                                if (max_defense < bdef) {
                                     max_defense = bdef
                                     namePok_defMax = tipo[i3].name
                                 }
@@ -127,24 +135,29 @@ cargarDatos = () => {
                             if (i4 === 5) {
                                 bs = stats[i4].base_stat
                                 speed = speed + bs
-                                if(max_speed<bs){
+                                if (max_speed < bs) {
                                     max_speed = bs
                                     namePok_speMax = tipo[i3].name
                                 }
 
                             }
                         }
-                        //weight = weight + tipo[i3].weight
 
                     }
-                    console.log(namePok_baseMax)
-                    console.log(namePok_hMax)
-                    console.log(namePok_hpMax)
-                    console.log(namePok_attMax)
-                    console.log(namePok_defMax)
-                    console.log(namePok_speMax)
-                    console.log(namePok_wMax)
-                    
+
+                    document.getElementById('exp-pok-name').innerText = namePok_baseMax
+                    document.getElementById('exp-num').innerText = max_base_exp
+                    document.getElementById('hei-pok-name').innerText = namePok_hMax
+                    document.getElementById('hei-num').innerText = max_height
+                    document.getElementById('hp-pok-name').innerText = namePok_hpMax
+                    document.getElementById('hp-num').innerText = max_hp
+                    document.getElementById('att-pok-name').innerText = namePok_attMax
+                    document.getElementById('att-num').innerText = max_attack
+                    document.getElementById('def-pok-name').innerText = namePok_defMax
+                    document.getElementById('def-num').innerText = max_defense
+                    document.getElementById('vel-pok-name').innerText = namePok_speMax
+                    document.getElementById('vel-num').innerText = max_speed
+
                     let prom_base_exp = Math.round(base_exp / (i3))
                     let prom_height = Math.round(height / (i3))
                     let prom_hp = Math.round(hp / (i3))
@@ -153,7 +166,6 @@ cargarDatos = () => {
                     let prom_special_att = Math.round(special_att / (i3))
                     let prom_special_def = Math.round(special_def / (i3))
                     let prom_speed = Math.round(speed / (i3))
-                    //let prom_weight = Math.round(weight/(i3))
 
                     let max = Math.max(prom_base_exp, prom_height, prom_hp, prom_attack, prom_defense, prom_special_att, prom_special_def, prom_speed)
 
