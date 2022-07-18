@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="css/myChart.css">
   <link rel="stylesheet" href="charts.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -178,10 +179,10 @@
       <section class="mb-4">
         <div class="card">
           <div class="card-header py-3">
-            <h5 class="mb-0 text-center"><strong>Porcentaje de pokemons por tipo</strong></h5>
+            <h5 class="mb-0 text-center"><strong>Pokemons por tipo</strong></h5>
           </div>
           <div class="card-body">
-            <table class="charts-css bar show-labels show-primary-axis show-4-secondary-axes show-heading">
+            <table class="charts-css bar show-labels show-primary-axis show-4-secondary-axes show-heading" id="my-bar">
             <tbody id="grafico-1">
 
             </tbody>
@@ -189,6 +190,25 @@
           </div>
         </div>
       </section>
+      
+      <section class="mb-4">
+        <div class="card">
+          <div class="card-header py-3">
+            <h5 class="mb-0 text-center"><strong>Gráfica ataque vs experiencia</strong></h5>
+          </div>
+          <div class="card-body">
+            <table class="charts-css line show-labels show-4-secondary-axes show-primary-axis" id="my-chart">
+
+              <tbody id="grafico-linea">
+                
+                
+              </tbody>
+            
+            </table>
+          </div>
+        </div>
+      </section>
+
       <section class="mb-4">
         <div class="card">
           <div class="card-header py-3">
@@ -198,7 +218,7 @@
             </select>
           </div>
           <div class="card-body">
-            <table class="charts-css bar show-labels show-primary-axis show-heading" id="grafico-2">
+            <table class="charts-css column show-labels show-primary-axis show-heading" id="grafico-2">
             
             </table>
           </div>

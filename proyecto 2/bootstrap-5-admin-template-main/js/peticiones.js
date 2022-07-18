@@ -29,9 +29,10 @@ cargarDatos = () => {
                     }
 
                 }
+
             }
 
-            //grafico 1
+            //GRAFICO DE BARRAS HORIZONTAL
             let clavesTipo = pokemonsPorTipo.keys()
             let c
             for (let t of pokemonsPorTipo.keys()) {
@@ -45,13 +46,57 @@ cargarDatos = () => {
                 }
             }
 
+            //GRAFICO DE LINEAS
+            let gen = new Map()
+            let arr = pokemonsPorTipo.get('general')
+            let matt = 0
+            for (d = 0; d < arr.length; d++) {
+                gen.set((arr[d].base_experience), (arr[d].stats[1].base_stat))
+                if (matt < arr[d].stats[1].base_stat) {
+                    matt = arr[d].stats[1].base_stat
+                }
+            }
+            let sortedMap = new Map([...gen].sort((a, b) => a[0] - b[0]))
+            let sizem = sortedMap.size
 
+            let v1 = 0
+            let v2 = Math.floor(0.25 * sizem)
+            let v3 = Math.floor(0.50 * sizem)
+            let v4 = Math.floor(0.75 * sizem)
+            let v5 = sizem - 1
+            let arrv = [v1, v2, v3, v4, v5]
 
+            let contador = 0
+            let anterior = 0
+            console.log(sortedMap)
+            for (let t2 of sortedMap.keys()) {
+                if (arrv.includes(contador)) {
+                    console.log("aAAAA")
+                    let graficoLinea = document.getElementById('grafico-linea')
+                    let plant = `<tr>
+                <th scope="row">${t2}</th>
+                <td style="--start: ${anterior}; --size: ${(sortedMap.get(t2)/matt)-anterior}"> <span class="data"> </span> </td>
+              </tr>`
+                    anterior = (sortedMap.get(t2)/matt)-anterior
+                    graficoLinea.innerHTML += plant
+                } else {
+                    let graficoLinea = document.getElementById('grafico-linea')
+                    let plant = `<tr>
+                <td style="--start: ${anterior}; --size: ${(sortedMap.get(t2)/matt)-anterior}"> <span class="data"> </span> </td>
+              </tr>`
+                    anterior = (sortedMap.get(t2)/matt)-anterior
+                    graficoLinea.innerHTML += plant
+                }
+                contador++
+            }
+
+            //GRAFICO DE BARRAS VERTICAL
             let etiquetaSelect = document.querySelector('select')
             etiquetaSelect.addEventListener('change', (event) => {
                 let grafico2 = document.getElementById('grafico-2')
                 grafico2.innerHTML = ""
                 if (etiquetaSelect.value != -1) {
+                    grafico2.style.cssText = "height:300px"
                     let tipo = pokemonsPorTipo.get(etiquetaSelect.value)
                     //promedio de estadisticas del tipo de pokemon
                     let base_exp = 0
