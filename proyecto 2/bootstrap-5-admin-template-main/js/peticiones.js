@@ -71,7 +71,6 @@ cargarDatos = () => {
             console.log(sortedMap)
             for (let t2 of sortedMap.keys()) {
                 if (arrv.includes(contador)) {
-                    console.log("aAAAA")
                     let graficoLinea = document.getElementById('grafico-linea')
                     let plant = `<tr>
                 <th scope="row">${t2}</th>
@@ -93,7 +92,7 @@ cargarDatos = () => {
             //GRAFICO DE BARRAS VERTICAL
             let etiquetaSelect = document.querySelector('select')
             etiquetaSelect.addEventListener('change', (event) => {
-                let grafico2 = document.getElementById('grafico-2')
+                let grafico2 = document.getElementById('my-column')
                 grafico2.innerHTML = ""
                 if (etiquetaSelect.value != -1) {
                     grafico2.style.cssText = "height:300px"
@@ -250,6 +249,8 @@ cargarDatos = () => {
               </tbody>`
 
                     grafico2.innerHTML = plantilla
+                    grafico2.style.cssText = "height:300px"
+                    
                 }
             })
 

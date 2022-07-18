@@ -1,7 +1,17 @@
-#my-chart.line {
+#my-line.line {
     height: 300px;
     margin: 0 auto;
 }
 #my-bar.bar{
     height: 300px;
+    transition-duration: 1s;
+    filter: grayscale(100%);
+}
+
+#my-bar:hover {
+    filter: none;
+}
+
+#my-column.column{
+    animation: highlighted-bar 2s linear infinite;
 }
