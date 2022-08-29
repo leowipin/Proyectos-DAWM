@@ -1,0 +1,30 @@
+.container-main, .titulo, .select-container, .busqueda, #form1{
+    display: flex;
+}
+
+.container-main{
+    flex-direction: column;
+    width: 90vw;
+    gap: 1.2rem;
+    margin-top: 2%;
+}
+
+.titulo, .select-container, .busqueda, #form1{
+    align-items: center;
+    justify-content: center;
+}
+
+.busqueda, #form1{
+    width: 90vw;
+}
+
+.grid-productos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2%;
+    column-gap: 2%;
+}
+.card{
+    justify-self: center;
+    width: 100%;
+}
