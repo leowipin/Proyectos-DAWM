@@ -13,8 +13,7 @@
     <div class="select-container">
         <select class="form-select" aria-label="Default select example">
             <option value="1" selected>Todos</option>
-            <option value="2">Telefono</option>
-            <option value="3">Laptops</option>
+            <option *ngFor="let cat of categorias" value="{{cat}}">{{cat}}</option>
         </select>
         <select class="form-select" aria-label="Default select example">
             <option value="1" selected>Popularidad</option>
