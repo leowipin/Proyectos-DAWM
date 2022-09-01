@@ -24,33 +24,15 @@
     </div>
 
     <div class="grid-productos">
-        <div class="card">
-            <img src="../assets/imagenes/default-product.jpg" class="card-img-top" alt="...">
+        <div *ngFor="let p of productos" class="card">
+            <img src={{p.picture}} class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+                <h5 class="card-title">{{p.name}}</h5>
+                <p class="card-text">{{p.description}}</p>
                 <a href="/detalle-producto" class="btn btn-primary">Visualizar</a>
             </div>
         </div>
-        <div class="card">
-            <img src="https://mobilestore.ec/wp-content/uploads/2021/04/Redmi-Note-10-Pro-Azul-Mobile-Store-Ecuador.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="/detalle-producto" class="btn btn-primary">Visualizar</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="../assets/imagenes/default-product.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="/detalle-producto" class="btn btn-primary">Visualizar</a>
-            </div>
-        </div>
+    
     </div>
 
 </div>

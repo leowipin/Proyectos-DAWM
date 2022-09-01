@@ -4,7 +4,7 @@ var router = express.Router();
 const mysqlConnection = require('../database')
 
 router.get('/', (req, res,) => {
-  mysqlConnection.query('SELECT * FROM products', (err, rows, fields) => {
+  mysqlConnection.query('SELECT * FROM products', (err, rows) => {
     if (!err) {
       res.json(rows)
     } else {

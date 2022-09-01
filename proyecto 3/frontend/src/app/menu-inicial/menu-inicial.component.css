@@ -1,3 +1,7 @@
+h5{
+    font-size: 20px;
+}
+
 .container-main, .titulo, .select-container, .busqueda, #form1{
     display: flex;
 }

@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuInicialComponent } from './menu-inicial/menu-inicial.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductoService } from './servicios/producto.service';
 
 const appRoutes:Routes=[
   {path:'', component:MenuInicialComponent},
@@ -24,8 +26,10 @@ const appRoutes:Routes=[
     AppRoutingModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
-  providers: [],
+  exports:[RouterModule],
+  providers: [ProductoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
