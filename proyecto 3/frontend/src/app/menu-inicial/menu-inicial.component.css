@@ -1,5 +1,11 @@
-h5{
+h5, h4{
     font-size: 20px;
+}
+h4{
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(24, 222, 97);
 }
 
 .container-main, .titulo, .select-container, .busqueda, #form1{

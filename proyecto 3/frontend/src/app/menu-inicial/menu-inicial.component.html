@@ -11,14 +11,14 @@
     </div>
 
     <div class="select-container">
-        <select class="form-select" aria-label="Default select example">
-            <option value="1" selected>Todos</option>
+        <select #selectCategory class="form-select" aria-label="Default select example" (change)="filtrarCategorias(selectCategory.value)">
+            <option  value="Todos" >Todos</option>
             <option *ngFor="let cat of categorias" value="{{cat}}">{{cat}}</option>
         </select>
-        <select class="form-select" aria-label="Default select example">
-            <option value="1" selected>Popularidad</option>
-            <option value="2">Precio mayor</option>
-            <option value="3">Precio menor</option>
+        <select #selectFilt class="form-select" aria-label="Default select example" (change)="filtros(selectFilt.value)">
+            <option value="Popularidad">Popularidad</option>
+            <option value="Precio mayor">Precio mayor</option>
+            <option value="Precio menor">Precio menor</option>
         </select>
     </div>
 
@@ -27,7 +27,7 @@
             <img src={{p.picture}} class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{p.name}}</h5>
-                <p class="card-text">{{p.description}}</p>
+                <h4 class="card-text">${{p.unit_price}}</h4>
                 <a href="/detalle-producto" class="btn btn-primary">Visualizar</a>
             </div>
         </div>
