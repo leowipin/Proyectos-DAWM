@@ -9,17 +9,20 @@ import { DetalleProductoComponent } from './detalle-producto/detalle-producto.co
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductoService } from './servicios/producto.service';
+import { AjustesComponent } from './ajustes/ajustes.component';
 
 const appRoutes:Routes=[
   {path:'', component:MenuInicialComponent},
-  {path:'detalle-producto', component:DetalleProductoComponent}
+  {path:'detalle-producto/:nombre', component:DetalleProductoComponent},
+  {path:'ajustes', component:AjustesComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuInicialComponent,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    AjustesComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ const appRoutes:Routes=[
     HttpClientModule,
   ],
   exports:[RouterModule],
-  providers: [ProductoService],
+  providers: [ProductoService, MenuInicialComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

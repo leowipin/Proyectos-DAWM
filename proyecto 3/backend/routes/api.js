@@ -69,6 +69,20 @@ router.get('/:categoria/precio-menor', (req, res) =>{
   
 })
 
+router.get('/:nombre', (req, res) =>{
+  const {nombre} = req.params
+    mysqlConnection.query('SELECT * FROM products WHERE name = ?',[nombre], (err, rows)=>{
+    if (!err) {
+      res.json(rows)
+    } else {
+      console.log(err)
+    }
+  })
+  
+})
+
+
+
 
 
 module.exports = router;

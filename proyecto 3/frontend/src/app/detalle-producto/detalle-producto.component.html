@@ -1,1 +1,18 @@
-<p>detalle-producto works!</p>
+<div class="container-main">
+    <div class="titulo">
+        <div class="cont-img"> <a [routerLink]="['']"><img src="../../assets/iconos/atras.png" alt="..." id="img-atras"></a></div>
+        <h1>Detalle producto</h1>
+    </div>
+    <div>
+        <img src={{producto.picture}} alt="..." class="card-img-top">
+    </div>
+    <div>
+        <h4>${{producto.unit_price}}</h4>
+    </div>
+    <div>
+        <p>{{producto.description}}</p>
+    </div>
+    <div>
+        <a [routerLink]="['/ajustes']" class="btn btn-primary" id="continuar-btn">Continuar</a>
+    </div>
+</div>

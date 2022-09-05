@@ -4,10 +4,10 @@
     </div>
 
     <div class="busqueda">
-        <form action="" method="get" id="form1">
-            <input type="text" class="form-control" id="busqueda-producto" placeholder="Ingrese producto">
-            <button type="submit" class="btn btn-primary" id="buscar">buscar</button>
-        </form>
+        <div id="div1">
+            <input #busquedaProd type="text" class="form-control" placeholder="Ingrese producto">
+            <button class="btn btn-primary" id="buscar" (click)="busqueda(busquedaProd.value)">buscar</button>
+        </div>
     </div>
 
     <div class="select-container">
@@ -26,9 +26,9 @@
         <div *ngFor="let p of productos" class="card">
             <img src={{p.picture}} class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{p.name}}</h5>
+                <h5 class="card-title" >{{p.name}}</h5>
                 <h4 class="card-text">${{p.unit_price}}</h4>
-                <a href="/detalle-producto" class="btn btn-primary">Visualizar</a>
+                <a [routerLink]="['/detalle-producto',p.name]" class="btn btn-primary" id={{p.name}}>Visualizar</a>
             </div>
         </div>
     

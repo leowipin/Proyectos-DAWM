@@ -1,0 +1,21 @@
+.titulo{
+    position: relative;
+
+}
+.cont-img{
+    position: absolute;
+    left: 2%;
+}
+#img-atras{
+    width: 30px;
+}
+h4{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(24, 222, 97);
+}
+#continuar-btn{
+    margin-bottom: 12px;
+}
