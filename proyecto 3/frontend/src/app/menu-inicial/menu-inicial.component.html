@@ -28,7 +28,7 @@
             <div class="card-body">
                 <h5 class="card-title" >{{p.name}}</h5>
                 <h4 class="card-text">${{p.unit_price}}</h4>
-                <a [routerLink]="['/detalle-producto',p.name]" class="btn btn-primary" id={{p.name}}>Visualizar</a>
+                <a [routerLink]="['/detalle-producto',p.product_id, p.name, p.unit_price]" class="btn btn-primary" id={{p.name}}>Visualizar</a>
             </div>
         </div>
     

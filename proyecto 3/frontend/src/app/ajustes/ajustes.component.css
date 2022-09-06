@@ -1,0 +1,21 @@
+.titulo{
+    position: relative;
+
+}
+.cont-img{
+    position: absolute;
+    left: 0%;
+}
+#img-atras{
+    width: 30px;
+}
+.content{
+    margin-left: 2%;
+}
+.card{
+    margin-bottom: 16px;
+}
+#continuar-btn{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}

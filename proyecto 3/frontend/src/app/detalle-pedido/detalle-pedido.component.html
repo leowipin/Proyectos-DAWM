@@ -1,0 +1,59 @@
+<div class="container-main">
+    <div class="titulo">
+        <div class="cont-img"> <a [routerLink]="['']"><img src="../../assets/iconos/atras.png" alt="..."
+                    id="img-atras"></a></div>
+        <h1>Detalle producto</h1>
+    </div>
+    <table class="tabla-datos">
+        <tr>
+            <th class="dato-tabla">Producto</th>
+            <th class="dato-tabla">Precio</th>
+            <th class="dato-tabla">Cantidad</th>
+            <th class="dato-tabla">Subtotal</th>
+        </tr>
+        <tr>
+            <th class="dato2-tabla">{{nombreProd}}</th>
+            <th class="dato2-tabla">{{precio}}</th>
+            <th class="dato2-tabla">{{cantidad}}</th>
+            <th class="dato2-tabla">{{precio}}</th>
+        </tr>
+
+    </table>
+
+    <table class="tabla-datos">
+        <tr>
+            <th class="dato-tabla">Subtotal:</th>
+            <th class="dato2-tabla">{{precio}}</th>
+        </tr>
+        <tr>
+            <th class="dato-tabla">IVA(12%):</th>
+            <th class="dato2-tabla">{{precioIva}}</th>
+        </tr>
+        <tr>
+            <th class="dato-tabla">Envío:</th>
+            <th class="dato2-tabla">{{precioEnvio}}</th>
+        </tr>
+        <tr>
+            <th class="dato-tabla">Total:</th>
+            <th class="dato2-tabla">{{total}}</th>
+        </tr>
+    </table>
+    <table class="tabla-datos" id="data">
+        <tr>
+            <th class="dato-tabla">Metodo de pago:</th>
+            <th class="dato2-tabla">{{pago}}</th>
+        </tr>
+        <tr>
+            <th class="dato-tabla">Metodo de recepcion:</th>
+            <th class="dato2-tabla">{{recepcion}}</th>
+        </tr>
+        <tr>
+            <th class="dato-tabla">Comentario</th>
+            <th class="dato2-tabla">{{comentario}}</th>
+        </tr>
+    </table>
+    <div>
+        <a [routerLink]="['/gracias']" class="btn btn-primary" id="comprar-btn" (click)="enviarDatos()">COMPRAR</a>
+    </div>
+
+</div>

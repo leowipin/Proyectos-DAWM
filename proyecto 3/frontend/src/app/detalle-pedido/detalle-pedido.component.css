@@ -1,0 +1,50 @@
+.dato-tabla,
+.dato2-tabla {
+    font-size: 1.12rem;
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+}
+
+.dato-tabla {
+    font-weight: 500;
+}
+
+.dato2-tabla {
+    font-weight: 400;
+}
+
+table.tabla-datos {
+    background-color: #F4F4F4;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.titulo {
+    position: relative;
+
+}
+
+#img-atras {
+    width: 30px;
+}
+
+.cont-img {
+    position: absolute;
+    left: 0%;
+}
+
+#data {
+    background-color: white;
+}
+
+#data.th {
+
+    text-align: left;
+
+}
+
+#data.td {
+
+    text-align: left;
+
+}

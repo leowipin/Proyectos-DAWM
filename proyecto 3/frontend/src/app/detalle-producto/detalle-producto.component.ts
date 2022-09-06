@@ -12,26 +12,19 @@ import { ProductoService } from '../servicios/producto.service';
 export class DetalleProductoComponent implements OnInit {
    
   productSelect: string;
-
+  precio: string;
   productos: Producto[];
   producto: Producto;
-  /*{
-    product_id:-1,
-    name:'string',
-    category:'string',
-    quantity_in_stock:-1,
-    unit_price:-1,
-    picture:'string',
-    description:'string',
-    popularity:-1
-}*/
+  id: string;
 
   constructor(private productoService:ProductoService, private router:Router, private activateRoute: ActivatedRoute) { 
     
   }
 
   ngOnInit(): void {
+    this.id = this.activateRoute.snapshot.params['id']
     this.productSelect = this.activateRoute.snapshot.params['nombre']
+    this.precio = this.activateRoute.snapshot.params['precio']
     this.inicializarProductos(this.productSelect)
     
 

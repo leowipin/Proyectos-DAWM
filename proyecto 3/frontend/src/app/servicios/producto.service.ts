@@ -32,7 +32,7 @@ export class ProductoService {
   obtenerProductosCategoriaPMenor(cat: string) {
     return this.http.get('http://127.0.0.1:3000/' + cat + '/precio-menor');
   }
-  cambiarNombre(nombre: string){
-    this.nombreProducto.next(nombre)
+  addOrder(order: any){
+    return this.http.post('http://127.0.0.1:3000/orders', order)
   }
 }

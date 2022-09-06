@@ -1,1 +1,52 @@
-<p>ajustes works!</p>
+<div class="container-main">
+    <div class="titulo">
+        <div class="cont-img"> <a [routerLink]="['']"><img src="../../assets/iconos/atras.png" alt="..."
+                    id="img-atras"></a></div>
+        <h1>Ajustes</h1>
+    </div>
+
+    <div class="card">
+        <div class="content">
+            <h2 class="card-title">Método de recepción</h2>
+            <div class="form-check">
+                <input #retiroRadio class="form-check-input" type="radio" name="flexRadioDefault" value="Retirar en local" (click)="metodoRecepcion(retiroRadio.value)">
+                <label class="form-check-label">
+                    Retirar en local
+                </label>
+            </div>
+            <div class="form-check">
+                <input #envioRadio class="form-check-input" type="radio" name="flexRadioDefault" value="Envio" (click)="metodoRecepcion(envioRadio.value)">
+                <label class="form-check-label">
+                    Envío
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+            <h2 class="card-title">Método de pago</h2>
+            <div class="form-check">
+                <input #efectivoRadio class="form-check-input" type="radio" name="flexRadioDefault2" value="Efectivo" (click)="metodoPago(efectivoRadio.value)">
+                <label class="form-check-label">
+                    Efectivo
+                </label>
+            </div>
+            <div class="form-check">
+                <input #tarjetaRadio class="form-check-input" type="radio" name="flexRadioDefault2" value="Tarjeta" (click)="metodoPago(tarjetaRadio.value)">
+                <label class="form-check-label">
+                    Tarjeta
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="card-title">Comentario</h2>
+        <div class="form-group">
+            <input #coment type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" (input)="inputComentario(coment.value)">
+        </div>
+    </div>
+    <div>
+        <a [routerLink]="['/detalle-pedido',id ,productSelect, precio, recepcion, pago, comentario]" class="btn btn-primary" id="continuar-btn">Continuar</a>
+    </div>
+
+</div>
