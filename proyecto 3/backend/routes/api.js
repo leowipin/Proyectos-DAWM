@@ -81,6 +81,19 @@ router.get('/:nombre', (req, res) =>{
   
 })
 
+router.post('/orders',(req, res)=>{
+  const {id, cantidad, precio, precioIva, precioEnvio, total } = req.body;
+ 
+  let sql = `insert into order_items values('${id}','${id}','${cantidad}','${precio}','${precioIva}','${precioEnvio}','${total}')`
+  mysqlConnection.query(sql,(err,rows)=>{
+    if (!err) {
+      res.json('orden agregada')
+    } else {
+      console.log(err)
+    }
+  })
+})
+
 
 
 
